@@ -25,6 +25,8 @@ fastifyPassport.registerUserSerializer(async (user, request) => user.id);
 
 // ... and then a deserializer that will fetch that user from the database when a request with an id in the session arrives
 fastifyPassport.registerUserDeserializer(async (id, request) => {
+
+    // return await User.findById(id);
   return {id:1, name:"Jose"};
 });
 
